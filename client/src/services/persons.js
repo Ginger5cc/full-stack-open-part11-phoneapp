@@ -18,6 +18,6 @@ const delP = (id) => {
 }
 
 
-export default { 
+export default {
   getAll, create, update, delP
 }

@@ -7,10 +7,11 @@
     "devbackend": "nodemon index.js",
     "devfrontend": "vite serve ./client",
     "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
-    "logs:prod": "fly logs"
+    "logs:prod": "fly logs",
+    "testfrontend": "vitest run",
+    "testfrontend:e2e": "playwright test"
   },
   "author": "Christy",
   "license": "ISC",
@@ -29,13 +30,19 @@
   "devDependencies": {
     "@eslint/js": "^9.6.0",
     "@flydotio/dockerfile": "^0.5.7",
+    "@playwright/test": "^1.46.1",
     "@stylistic/eslint-plugin-js": "^2.3.0",
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.0",
+    "@types/node": "^22.5.0",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^9.6.0",
     "globals": "^15.7.0",
+    "jsdom": "^25.0.0",
     "nodemon": "^3.1.4",
-    "vite": "^5.4.2"
+    "vite": "^5.4.2",
+    "vitest": "^2.0.5"
   }
 }
