@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "startbackend": "node index.js",
     "devbackend": "nodemon index.js",
-    "devfrontend": "vite serve ./client",
+    "start": "vite serve ./client",
     "lint": "eslint .",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
