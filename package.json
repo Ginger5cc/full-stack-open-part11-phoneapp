@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "startbackend": "node index.js",
+    "start": "node index.js",
     "devbackend": "nodemon index.js",
-    "start": "vite",
+    "startfrontend": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "deploy": "fly deploy",
-    "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs",
     "testfrontend": "vitest run",
     "test": "playwright test"

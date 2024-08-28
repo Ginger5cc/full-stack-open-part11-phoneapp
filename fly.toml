@@ -1,4 +1,4 @@
-# fly.toml app configuration file generated for full-stack-open-part11-phoneapp on 2024-08-28T11:32:39-04:00
+# fly.toml app configuration file generated for full-stack-open-part11-phoneapp on 2024-08-28T11:49:07-04:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
@@ -8,8 +8,8 @@ primary_region = 'mia'
 
 [build]
 
-[env]
-  PORT = "3001"
+[processes]
+app = "node index.js"
 
 [http_service]
   internal_port = 3001
