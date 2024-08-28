@@ -6,6 +6,7 @@
     "startbackend": "node index.js",
     "devbackend": "nodemon index.js",
     "start": "vite serve ./client",
+    "build": "vite build",
     "lint": "eslint .",
     "deploy": "fly deploy",
     "deploy:full": "npm run build:ui && npm run deploy",
