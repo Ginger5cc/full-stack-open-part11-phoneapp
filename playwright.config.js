@@ -71,7 +71,7 @@ module.exports = defineConfig({
 
   /* Run your local dev server before starting the tests */
   webServer: {
-    command: process.env.CI ? "vite preview --port 5173" : "vite serve ./client",
+    command: process.env.CI ? 'vite preview --port 5173' : 'vite serve ./client',
     port: 5173,
     reuseExistingServer: !process.env.CI,
   }
