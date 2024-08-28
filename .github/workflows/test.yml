@@ -35,3 +35,25 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
+      - name: Set up Fly.io
+        if: ${{ github.event_name == 'push' }}
+        uses: superfly/flyctl-actions/setup-flyctl@master
+      - name: Deploy the app
+        if: ${{ github.event_name == 'push' }}
+        run: flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN_PHONE }}
+      - name: Discord Notification (Succeed)
+        if: ${{ success() }}
+        uses: hunghg255/action-notifications@master
+        with:
+          discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title:  "A new version of Phone Book App deployed by ginger"
+          description: ${{ github.event.head_commit.message }}
+      - name: Discord Notification (Failure)
+        if: ${{ failure() }}
+        uses: hunghg255/action-notifications@master
+        with:
+          discord_webhook: ${{ secrets.DISCORD_WEBHOOK }}
+          title:  "Phone Book App Build Broken by ginger"
+          description: ${{ github.event.head_commit.message }}
