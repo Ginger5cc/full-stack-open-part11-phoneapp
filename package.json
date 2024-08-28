@@ -5,7 +5,7 @@
   "scripts": {
     "startbackend": "node index.js",
     "devbackend": "nodemon index.js",
-    "start": "vite serve ./client",
+    "start": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "deploy": "fly deploy",
