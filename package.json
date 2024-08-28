@@ -11,7 +11,7 @@
     "deploy:full": "npm run build:ui && npm run deploy",
     "logs:prod": "fly logs",
     "testfrontend": "vitest run",
-    "testfrontend:e2e": "playwright test"
+    "test": "playwright test"
   },
   "author": "Christy",
   "license": "ISC",
